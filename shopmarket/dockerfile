@@ -1,0 +1,17 @@
+#base python docker
+from python:3.9.13-buster
+
+#import code
+ADD . /code
+
+#change the  directory
+WORKDIR /code
+
+#installing libs
+RUN pip install django
+
+#expose the port number
+EXPOSE 8000
+
+#main python file
+CMD python manage.py runserver
